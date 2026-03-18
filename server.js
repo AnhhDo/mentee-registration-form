@@ -6,6 +6,8 @@ import "dotenv/config";
 const app = new Hono();
 
 app.use("*", cors());
+app.get("/", (c) => c.redirect("/index.html"));
+app.get("/mentor", (c) => c.redirect("/mentor.html"));
 
 function supabaseFromEnv() {
   return createClient(
