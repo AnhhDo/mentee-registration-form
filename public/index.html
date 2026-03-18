@@ -349,7 +349,7 @@
             mentorEmpty.classList.add("hidden");
 
             mentorList.innerHTML = matchedMentors.map((mentor) => {
-                const profileUrl = `mentor.html?id=${encodeURIComponent(mentor.id)}`;
+                const profileUrl = `/mentor?id=${encodeURIComponent(mentor.id)}`;
                 const selectionKey = makeSelectionKey(selectedField, mentor.id);
                 const isChecked = selectedRegistrationsMap.has(selectionKey);
 
