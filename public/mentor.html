@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>FPT Mentor Profile</title>
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#ec5b13",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221610",
+                    },
+                    fontFamily: { display: ["Public Sans", "sans-serif"] },
+                    borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" },
+                },
+            },
+        };
+    </script>
+
+    <style>
+        body {
+            font-family: "Public Sans", sans-serif;
+        }
+
+        .premium-gradient {
+            background: linear-gradient(135deg, #221610 0%, #3d2a1f 100%);
+        }
+
+        #stateBox {
+            display: none;
+        }
+
+        #stateBox.show {
+            display: block;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 transition-colors duration-300">
+    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+
+        <header class="bg-white py-4 px-6 md:px-12 border-b border-gray-100 flex items-center">
+            <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-[#ec5b13]">school</span>
+                <span class="font-bold text-xl tracking-tight">FPT Mentorship 2026</span>
+            </div>
+        </header>
+
+        <main class="max-w-7xl mx-auto w-full px-4 lg:px-20 py-8 lg:py-12">
+            <div class="relative overflow-hidden rounded-3xl premium-gradient p-8 lg:p-12 mb-12 shadow-2xl">
+                <div class="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
+                    <span
+                        class="material-symbols-outlined text-[300px] absolute -top-20 -right-20 rotate-12">workspace_premium</span>
+                </div>
+
+                <div class="relative z-10 flex flex-col lg:flex-row items-center lg:items-end gap-8">
+                    <div class="relative group">
+                        <div
+                            class="h-48 w-48 rounded-2xl overflow-hidden border-4 border-primary/30 shadow-2xl transition-transform group-hover:scale-[1.02] bg-white/5">
+                            <img id="avatar" class="w-full h-full object-cover"
+                                alt="Professional profile portrait of mentor" />
+                        </div>
+                        <div class="absolute -bottom-3 -right-3 bg-primary text-white p-2 rounded-lg shadow-lg">
+                            <span class="material-symbols-outlined text-xl">verified</span>
+                        </div>
+                    </div>
+
+                    <div class="flex-1 text-center lg:text-left space-y-2">
+                        <div
+                            class="inline-flex items-center px-3 py-1 rounded-full bg-primary/20 text-primary text-xs font-bold uppercase tracking-widest mb-2">
+                            Senior Executive Mentor
+                        </div>
+
+                        <h2 class="text-4xl lg:text-5xl font-bold text-white tracking-tight" id="mentorName">Mentor
+                            Profile</h2>
+
+                        <p class="text-slate-300 text-lg flex items-center justify-center lg:justify-start gap-2">
+                            <span class="material-symbols-outlined text-sm">mail</span>
+                            <span id="mentorEmail"></span>
+                        </p>
+
+                        <div class="flex flex-wrap justify-center lg:justify-start gap-3 pt-4" id="fields"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="space-y-12 max-w-4xl mx-auto">
+
+                    <section>
+                        <div class="flex items-center gap-3 mb-6">
+                            <span class="material-symbols-outlined text-primary">description</span>
+                            <h3 class="text-2xl font-bold border-b-2 border-primary pb-1">Kinh nghiệm &amp; Thế mạnh
+                                chuyên môn</h3>
+                        </div>
+                        <div class="bg-white dark:bg-slate-800/50 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm leading-relaxed text-slate-700 dark:text-slate-300 whitespace-pre-wrap"
+                            id="expertise">—</div>
+                    </section>
+
+                    <section>
+                        <div class="flex items-center gap-3 mb-6">
+                            <span class="material-symbols-outlined text-primary">psychology</span>
+                            <h3 class="text-2xl font-bold border-b-2 border-primary pb-1">Kinh nghiệm Mentoring &amp;
+                                Coaching</h3>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div
+                                class="bg-white dark:bg-slate-800/50 p-6 rounded-2xl border border-slate-200 dark:border-slate-700">
+                                <h4 class="font-bold text-lg mb-4 flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-primary">history_edu</span>
+                                    Quá trình Mentoring
+                                </h4>
+                                <p class="text-sm text-slate-600 dark:text-slate-400 whitespace-pre-wrap"
+                                    id="mentoringExp">—</p>
+                            </div>
+
+                            <div
+                                class="bg-white dark:bg-slate-800/50 p-6 rounded-2xl border border-slate-200 dark:border-slate-700">
+                                <h4 class="font-bold text-lg mb-4 flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-primary">target</span>
+                                    Lĩnh vực sẵn sàng Mentor
+                                </h4>
+                                <div class="flex flex-wrap gap-2" id="fieldsAlt"></div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="flex items-center gap-3 mb-6">
+                            <span class="material-symbols-outlined text-primary">military_tech</span>
+                            <h3 class="text-2xl font-bold border-b-2 border-primary pb-1">Thành tích &amp; Vinh danh
+                            </h3>
+                        </div>
+                        <div class="space-y-4" id="achievements"></div>
+                    </section>
+
+                    <section id="quoteSection" class="hidden">
+                        <div class="flex items-center gap-3 mb-6">
+                            <span class="material-symbols-outlined text-primary">format_quote</span>
+                            <h3 class="text-2xl font-bold border-b-2 border-primary pb-1">Câu nói yêu thích</h3>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-slate-800/50 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
+                            <p id="favouriteQuote"
+                                class="italic text-slate-700 dark:text-slate-300 leading-relaxed whitespace-pre-wrap">
+                            </p>
+                        </div>
+                    </section>
+
+                    <div class="bg-white dark:bg-slate-800/50 p-4 rounded-2xl border border-slate-200 dark:border-slate-700"
+                        id="stateBox">
+                        <div class="loading text-slate-700 dark:text-slate-300 text-sm" id="stateMsg">Loading...</div>
+                    </div>
+
+                    <div class="mt-12 text-center text-sm text-gray-500">
+                        Mọi thông tin cần hỗ trợ vui lòng liên hệ: Ms. ThanhNQT2 | 80456 | 090 932 3898
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="bg-gray-100 py-10 px-4 lg:px-20 border-t border-gray-200">
+            <div class="max-w-4xl mx-auto flex flex-col items-center text-center gap-4">
+                <div class="flex items-center gap-2 text-gray-700">
+                    <span class="material-symbols-outlined text-primary">school</span>
+                    <span class="font-bold text-lg">FPT Mentorship</span>
+                </div>
+                <div class="space-y-1">
+                    <p class="font-bold text-gray-800 uppercase tracking-wide">Trung tâm đào tạo và phát triển</p>
+                </div>
+                <p class="text-slate-400 text-sm">
+                    © 2026 FPT TELECOM. ALL RIGHTS RESERVED.
+                </p>
+            </div>
+        </footer>
+
+        <script>
+            const API_BASE = "/api/mentors";
+
+            const el = (id) => document.getElementById(id);
+            const stateBox = el("stateBox");
+            const stateMsg = el("stateMsg");
+
+            function setState(type, msg) {
+                stateBox.classList.add("show");
+                stateMsg.className = `text-sm ${type === "error" ? "text-red-600" : "text-slate-700 dark:text-slate-300"}`;
+                stateMsg.textContent = msg;
+            }
+
+            function clearState() {
+                stateBox.classList.remove("show");
+            }
+
+            function safeLinkEmail(email) {
+                if (!email) return "";
+                const escaped = escapeHtml(email);
+                return `<a class="hover:underline" href="mailto:${escaped}">${escaped}</a>`;
+            }
+
+            function escapeHtml(str) {
+                return String(str)
+                    .replace(/&/g, "&amp;")
+                    .replace(/</g, "&lt;")
+                    .replace(/>/g, "&gt;")
+                    .replace(/"/g, "&quot;")
+                    .replace(/'/g, "&#039;");
+            }
+
+            function toChips(raw, variant) {
+                const s = (raw || "").toString().trim();
+                if (!s) return "";
+
+                const parts = s
+                    .split(/[,;\n]+/g)
+                    .map((x) => x.trim())
+                    .filter(Boolean);
+
+                if (!parts.length) return "";
+
+                return parts
+                    .slice(0, 18)
+                    .map((t) => {
+                        if (variant === "card") {
+                            return `<span class="px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-lg">${escapeHtml(t)}</span>`;
+                        }
+                        return `<span class="bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-full text-white text-sm border border-white/10">${escapeHtml(t)}</span>`;
+                    })
+                    .join("");
+            }
+
+            function normalizeDriveImageUrl(url) {
+                if (!url) return "";
+
+                const openIdMatch = url.match(/[?&]id=([^&]+)/);
+                if (openIdMatch && openIdMatch[1]) {
+                    const id = openIdMatch[1];
+                    return `https://drive.google.com/thumbnail?id=${id}&sz=w1000`;
+                }
+
+                const fileMatch = url.match(/\/file\/d\/([^/]+)/);
+                if (fileMatch && fileMatch[1]) {
+                    const id = fileMatch[1];
+                    return `https://drive.google.com/thumbnail?id=${id}&sz=w1000`;
+                }
+
+                return url;
+            }
+
+            function renderAchievements(raw) {
+                const box = el("achievements");
+                const text = (raw || "").toString().trim();
+
+                if (!text) {
+                    box.innerHTML = `
+                <div class="flex gap-6 items-center p-6 bg-white dark:bg-slate-800/50 rounded-2xl border-l-4 border-primary shadow-sm">
+                    <div class="h-16 w-16 bg-primary/10 rounded-full flex items-center justify-center shrink-0">
+                        <span class="material-symbols-outlined text-3xl text-primary">workspace_premium</span>
+                    </div>
+                    <div>
+                        <h4 class="font-bold">—</h4>
+                        <p class="text-sm text-slate-500">Không có dữ liệu</p>
+                    </div>
+                </div>`;
+                    return;
+                }
+
+                const lines = text.split(/\n+/g).map((x) => x.trim()).filter(Boolean);
+
+                box.innerHTML = lines
+                    .map((line, idx) => {
+                        const icon = idx % 2 === 0 ? "workspace_premium" : "auto_awesome";
+                        return `
+                    <div class="flex gap-6 items-center p-6 bg-white dark:bg-slate-800/50 rounded-2xl border-l-4 border-primary shadow-sm transition-transform hover:translate-x-1">
+                        <div class="h-16 w-16 bg-primary/10 rounded-full flex items-center justify-center shrink-0">
+                            <span class="material-symbols-outlined text-3xl text-primary">${icon}</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">${escapeHtml(line)}</h4>
+                        </div>
+                    </div>
+                `;
+                    })
+                    .join("");
+            }
+
+            function mapApiResponse(apiData) {
+                return {
+                    name: apiData.full_name || "Mentor Profile",
+                    email: apiData.fpt_email || "",
+                    profileImage: normalizeDriveImageUrl(apiData.photo || ""),
+                    expertise: apiData.experience_stengths || "—",
+                    mentoringExp: apiData.mentoring_experience || "Chưa có thông tin.",
+                    achievements: apiData.awards || "",
+                    fields: apiData.fields || "",
+                    mentoringForm: apiData.mentoring_form || "",
+                    favouriteQuote: apiData["favourite_quote."] || ""
+                };
+            }
+
+            function render(data) {
+                el("mentorName").textContent = data.name || "Mentor Profile";
+                el("mentorEmail").innerHTML = data.email ? safeLinkEmail(data.email) : "";
+                el("fields").innerHTML = toChips(data.fields, "hero") || "";
+
+                const fieldsAlt = el("fieldsAlt");
+                if (fieldsAlt) fieldsAlt.innerHTML = toChips(data.fields, "card") || "";
+
+                el("expertise").textContent = data.expertise || "—";
+                el("mentoringExp").textContent = data.mentoringExp || "—";
+
+                renderAchievements(data.achievements);
+
+                const avatar = el("avatar");
+                const imageUrl = normalizeDriveImageUrl(data.profileImage);
+
+                if (imageUrl) {
+                    avatar.src = imageUrl;
+                } else {
+                    avatar.removeAttribute("src");
+                }
+
+                const quoteSection = el("quoteSection");
+                const favouriteQuote = el("favouriteQuote");
+                if (data.favouriteQuote) {
+                    quoteSection.classList.remove("hidden");
+                    favouriteQuote.textContent = data.favouriteQuote;
+                } else {
+                    quoteSection.classList.add("hidden");
+                }
+            }
+
+            async function boot() {
+                const params = new URLSearchParams(window.location.search);
+                const mentorId = params.get("id");
+
+                if (!mentorId) {
+                    setState("error", "Missing mentor id in URL");
+                    return;
+                }
+
+                const url = `${API_BASE}/${encodeURIComponent(mentorId)}`;
+                setState("loading", "Loading mentor info...");
+
+                try {
+                    const res = await fetch(url);
+
+                    if (!res.ok) {
+                        throw new Error(`HTTP ${res.status}`);
+                    }
+
+                    const apiData = await res.json();
+                    const mappedData = mapApiResponse(apiData);
+
+                    render(mappedData);
+                    clearState();
+                } catch (err) {
+                    console.error(err);
+                    setState("error", err.message || "Failed to load mentor data.");
+                }
+            }
+
+            boot();
+        </script>
+</body>
+
+</html>

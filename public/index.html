@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Đăng kí Mentee - FPT Mentorship 2026</title>
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+
+    <style>
+        body {
+            font-family: "Public Sans", sans-serif;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #e65100 0%, #ff8f00 100%);
+        }
+
+        .fpt-orange-button {
+            background-color: #f37021;
+            transition: background-color 0.2s ease;
+        }
+
+        .fpt-orange-button:hover {
+            background-color: #d65d15;
+        }
+
+        .form-card {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .section-border {
+            border-left: 4px solid #f37021;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+    <header class="bg-white py-4 px-6 md:px-12 border-b border-gray-100 flex items-center">
+        <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-[#ec5b13]">school</span>
+            <span class="font-bold text-xl tracking-tight">FPT Mentorship 2026</span>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 pb-20">
+        <section class="mt-8 mb-12">
+            <div class="hero-gradient rounded-2xl p-8 md:p-12 text-white shadow-lg">
+                <h1 class="text-3xl md:text-4xl font-bold mb-4">[FHRDT] ĐĂNG KÝ MENTEE - CHƯƠNG TRÌNH MENTORSHIP 2026
+                </h1>
+            </div>
+        </section>
+
+        <form id="menteeForm" action="#" class="space-y-6" method="POST">
+            <div class="bg-white rounded-xl p-8 form-card border border-gray-100">
+                <div class="section-border pl-4 mb-8">
+                    <h2 class="text-xl font-bold uppercase tracking-wide">THÔNG TIN CÁ NHÂN</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="col-span-1 md:col-span-2">
+                        <label class="block text-sm font-semibold mb-2" for="fullName">
+                            1. Họ và tên <span class="text-red-500">*</span>
+                        </label>
+                        <input
+                            class="w-full rounded-lg border-gray-300 focus:border-orange-500 focus:ring-orange-500 py-3"
+                            id="fullName" name="fullName" placeholder="Nguyễn Văn A" required type="text" />
+                    </div>
+
+                    <div class="col-span-1 md:col-span-2">
+                        <label class="block text-sm font-semibold mb-2" for="email">
+                            2. Email FPT/TINPNC của Anh Chị? <span class="text-red-500">*</span>
+                        </label>
+                        <p class="text-xs text-gray-500 italic mb-2">
+                            Lưu ý: Anh Chị vui lòng điền đúng email để hệ thống ghi nhận kết quả lựa chọn
+                        </p>
+                        <input
+                            class="w-full rounded-lg border-gray-300 focus:border-orange-500 focus:ring-orange-500 py-3"
+                            id="email" name="email" placeholder="Your answer" required type="email" />
+                    </div>
+
+                    <div class="col-span-1 md:col-span-2">
+                        <label class="block text-sm font-semibold mb-2" for="unit">
+                            3. Đơn vị/Chi nhánh của Anh Chị? <span class="text-red-500">*</span>
+                        </label>
+                        <p class="text-xs text-gray-500 italic mb-2">VD: FHR, DNI, ISC...</p>
+                        <input
+                            class="w-full rounded-lg border-gray-300 focus:border-orange-500 focus:ring-orange-500 py-3"
+                            id="unit" name="unit" placeholder="Your answer" required type="text" />
+                    </div>
+
+                    <div class="col-span-1 md:col-span-2 pt-4 border-t border-gray-50">
+                        <label class="block text-sm font-semibold mb-4">
+                            4. Lĩnh vực bạn muốn tham gia trong chương trình Mentorship 2026
+                            <span class="text-red-500">*</span>
+                        </label>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <input
+                                    class="interest-radio w-5 h-5 rounded-full border-gray-300 text-orange-600 focus:ring-orange-500"
+                                    name="mentoring_field" type="radio" value="Quản lý & Lãnh đạo" />
+                                <span class="text-sm text-gray-700 group-hover:text-black">Quản lý &amp; Lãnh đạo</span>
+                            </label>
+
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <input
+                                    class="interest-radio w-5 h-5 rounded-full border-gray-300 text-orange-600 focus:ring-orange-500"
+                                    name="mentoring_field" type="radio" value="Kinh doanh" />
+                                <span class="text-sm text-gray-700 group-hover:text-black">Kinh doanh</span>
+                            </label>
+
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <input
+                                    class="interest-radio w-5 h-5 rounded-full border-gray-300 text-orange-600 focus:ring-orange-500"
+                                    name="mentoring_field" type="radio" value="Kỹ thuật & Công nghệ" />
+                                <span class="text-sm text-gray-700 group-hover:text-black">Kỹ thuật &amp; Công
+                                    nghệ</span>
+                            </label>
+
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <input
+                                    class="interest-radio w-5 h-5 rounded-full border-gray-300 text-orange-600 focus:ring-orange-500"
+                                    name="mentoring_field" type="radio" value="Vận hành" />
+                                <span class="text-sm text-gray-700 group-hover:text-black">Vận hành</span>
+                            </label>
+
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <input
+                                    class="interest-radio w-5 h-5 rounded-full border-gray-300 text-orange-600 focus:ring-orange-500"
+                                    name="mentoring_field" type="radio" value="Dịch vụ khách hàng" />
+                                <span class="text-sm text-gray-700 group-hover:text-black">Dịch vụ khách hàng</span>
+                            </label>
+
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <input
+                                    class="interest-radio w-5 h-5 rounded-full border-gray-300 text-orange-600 focus:ring-orange-500"
+                                    name="mentoring_field" type="radio"
+                                    value="Kỹ năng phát triển & định hướng cá nhân" />
+                                <span class="text-sm text-gray-700 group-hover:text-black">Kỹ năng phát triển &amp; định
+                                    hướng cá nhân</span>
+                            </label>
+
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <input
+                                    class="interest-radio w-5 h-5 rounded-full border-gray-300 text-orange-600 focus:ring-orange-500"
+                                    name="mentoring_field" type="radio" value="Nhân sự" />
+                                <span class="text-sm text-gray-700 group-hover:text-black">Nhân sự</span>
+                            </label>
+
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <input
+                                    class="interest-radio w-5 h-5 rounded-full border-gray-300 text-orange-600 focus:ring-orange-500"
+                                    name="mentoring_field" type="radio" value="Tài chính" />
+                                <span class="text-sm text-gray-700 group-hover:text-black">Tài chính</span>
+                            </label>
+                        </div>
+
+                        <div class="hidden animate-in fade-in duration-500" id="mentor-selection-container">
+                            <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+                                <div class="mb-4">
+                                    <h3
+                                        class="text-sm font-bold text-gray-900 uppercase tracking-wider flex items-center gap-2">
+                                        <svg class="w-4 h-4 text-orange-600" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                        </svg>
+                                        Danh sách Mentor theo lĩnh vực
+                                    </h3>
+                                    <p class="text-xs text-gray-500 mt-1">
+                                        Dựa trên lĩnh vực bạn chọn, hãy chọn Mentor bạn mong muốn đồng hành (Tối đa 3
+                                        người trên tất cả lĩnh vực)
+                                    </p>
+                                </div>
+
+                                <div class="space-y-3" id="mentor-list"></div>
+
+                                <p id="mentor-empty" class="hidden text-sm text-gray-500 italic">
+                                    Chưa có mentor phù hợp với lĩnh vực này.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl p-8 form-card border border-gray-100">
+                <div class="section-border pl-4 mb-8">
+                    <h2 class="text-xl font-bold uppercase tracking-wide">Bạn đã lựa chọn đăng kí các mentor sau</h2>
+                </div>
+                <div class="space-y-4" id="selected-mentors-summary">
+                    <p class="text-sm text-gray-500 italic">Bạn chưa chọn mentor nào.</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl p-8 form-card border border-gray-100">
+                <div class="flex items-start gap-4">
+                    <input class="mt-1 w-5 h-5 rounded border-gray-300 text-orange-600 focus:ring-orange-500"
+                        id="commitment" name="commitment" required type="checkbox" />
+                    <label class="text-sm text-gray-600 leading-relaxed" for="commitment">
+                        Tôi xác nhận rằng các thông tin đã cung cấp trong form là đúng sự thật. <br>
+                        FHRDT sẽ chuyển thông tin của bạn đến Mentor đã đăng ký và thông báo kết quả qua email FPT.
+                    </label>
+                </div>
+                <div class="flex items-start gap-4">
+                    <label class="text-sm text-gray-600 leading-relaxed" for="commitment">
+
+                    </label>
+                </div>
+
+                <div class="mt-8">
+                    <button
+                        class="fpt-orange-button text-white px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-2 w-full md:w-auto"
+                        type="submit">
+                        Nộp đơn đăng kí
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </form>
+
+        <div class="mt-12 text-center text-sm text-gray-500">
+            Mọi thông tin cần hỗ trợ vui lòng liên hệ: Ms. ThanhNQT2 | 80456 | 090 932 3898
+        </div>
+    </main>
+
+    <footer class="bg-gray-100 py-10 px-4 lg:px-20 border-t border-gray-200">
+        <div class="max-w-4xl mx-auto flex flex-col items-center text-center gap-4">
+            <div class="flex items-center gap-2 text-gray-700">
+                <span class="material-symbols-outlined text-[#ec5b13]">school</span>
+                <span class="font-bold text-lg">FPT Mentorship</span>
+            </div>
+            <div class="space-y-1">
+                <p class="font-bold text-gray-800 uppercase tracking-wide">Trung tâm đào tạo và phát triển</p>
+            </div>
+            <p class="text-slate-400 text-sm">
+                © 2026 FPT TELECOM. ALL RIGHTS RESERVED.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        const API_BASE_MENTORS = "/api/mentors";
+        const API_BASE_MENTEES = "/api/mentees";
+
+        let allMentors = [];
+        const selectedRegistrationsMap = new Map();
+
+        function escapeHtml(str) {
+            return String(str ?? "")
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+
+        function normalizeDriveImageUrl(url) {
+            if (!url) return "";
+
+            const openIdMatch = url.match(/[?&]id=([^&]+)/);
+            if (openIdMatch && openIdMatch[1]) {
+                const id = openIdMatch[1];
+                return `https://drive.google.com/thumbnail?id=${id}&sz=w300`;
+            }
+
+            const fileMatch = url.match(/\/file\/d\/([^/]+)/);
+            if (fileMatch && fileMatch[1]) {
+                const id = fileMatch[1];
+                return `https://drive.google.com/thumbnail?id=${id}&sz=w300`;
+            }
+
+            return url;
+        }
+
+        function splitFields(fields) {
+            return String(fields || "")
+                .split(/[,;\n]+/g)
+                .map(x => x.trim())
+                .filter(Boolean);
+        }
+
+        function getInitials(name) {
+            const parts = String(name || "").trim().split(/\s+/).filter(Boolean);
+            return parts.slice(-2).map(p => p[0]?.toUpperCase() || "").join("") || "M";
+        }
+
+        function makeSelectionKey(field, mentorId) {
+            return `${field}::${mentorId}`;
+        }
+
+        function mapMentor(apiData) {
+            const mentorId =
+                apiData.Mentor_ID ||
+                apiData.mentor_id ||
+                (apiData.fpt_email ? apiData.fpt_email.replace("@fpt.com", "") : "");
+
+            return {
+                id: mentorId,
+                name: apiData.full_name || apiData.mentor_name || apiData.Mentor_Name || "Chưa có tên",
+                email: apiData.fpt_email || apiData.mentor_email || apiData.Email || "",
+                photo: normalizeDriveImageUrl(apiData.photo || apiData.profile_image || apiData.Profile_Image || ""),
+                expertise: apiData.experience_stengths || apiData.mentor_expertise || apiData.Expertise || "",
+                fields: splitFields(apiData.fields || apiData.mentor_fields || apiData.Fields || ""),
+                mentoringForm: apiData.mentoring_form || apiData.mentoring_experience || apiData.Mentoring_Experience || ""
+            };
+        }
+
+        function mentorMatchesField(mentor, selectedField) {
+            return mentor.fields.some(field => field.toLowerCase() === selectedField.toLowerCase());
+        }
+
+        function renderMentors(selectedField) {
+            const mentorContainer = document.getElementById("mentor-selection-container");
+            const mentorList = document.getElementById("mentor-list");
+            const mentorEmpty = document.getElementById("mentor-empty");
+
+            if (!selectedField) {
+                mentorContainer.classList.add("hidden");
+                mentorList.innerHTML = "";
+                mentorEmpty.classList.add("hidden");
+                return;
+            }
+
+            const matchedMentors = allMentors.filter(mentor => mentorMatchesField(mentor, selectedField));
+
+            mentorContainer.classList.remove("hidden");
+
+            if (!matchedMentors.length) {
+                mentorList.innerHTML = "";
+                mentorEmpty.classList.remove("hidden");
+                return;
+            }
+
+            mentorEmpty.classList.add("hidden");
+
+            mentorList.innerHTML = matchedMentors.map((mentor) => {
+                const profileUrl = `mentor.html?id=${encodeURIComponent(mentor.id)}`;
+                const selectionKey = makeSelectionKey(selectedField, mentor.id);
+                const isChecked = selectedRegistrationsMap.has(selectionKey);
+
+                return `
+                <div class="bg-white border border-gray-200 rounded-lg p-4 flex items-center gap-4 hover:border-orange-300 transition-colors shadow-sm">
+                    <input
+                        class="mentor-checkbox w-5 h-5 rounded border-gray-300 text-orange-600 focus:ring-orange-500"
+                        name="selected_mentors"
+                        type="checkbox"
+                        value="${escapeHtml(mentor.id)}"
+                        data-mentor-id="${escapeHtml(mentor.id)}"
+                        data-field="${escapeHtml(selectedField)}"
+                        ${isChecked ? "checked" : ""} />
+
+                    ${mentor.photo
+                        ? `<img src="${escapeHtml(mentor.photo)}"
+                               alt="${escapeHtml(mentor.name)}"
+                               class="w-12 h-12 rounded-full object-cover border border-gray-200 shrink-0"
+                               referrerpolicy="no-referrer" />`
+                        : `<div class="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center text-orange-700 font-bold text-sm shrink-0">
+                               ${escapeHtml(getInitials(mentor.name))}
+                           </div>`
+                    }
+
+                    <div class="flex-1 min-w-0">
+                        <p class="text-sm font-bold text-gray-900 truncate">${escapeHtml(mentor.name)}</p>
+                        <p class="text-xs text-gray-500 truncate">${escapeHtml(mentor.expertise || mentor.mentoringForm || "Mentor")}</p>
+                    </div>
+
+                    <a href="${profileUrl}"
+                       target="_blank"
+                       class="text-xs font-semibold text-orange-600 hover:text-orange-700 underline decoration-orange-200 underline-offset-4 px-2 py-1">
+                        Xem chi tiết
+                    </a>
+                </div>
+            `;
+            }).join("");
+
+            attachMentorCheckboxHandlers();
+        }
+
+        function attachMentorCheckboxHandlers() {
+            const checkboxes = document.querySelectorAll(".mentor-checkbox");
+
+            checkboxes.forEach(cb => {
+                cb.addEventListener("change", () => {
+                    const mentorId = cb.dataset.mentorId;
+                    const field = cb.dataset.field;
+                    const selectionKey = makeSelectionKey(field, mentorId);
+                    const mentor = allMentors.find(m => m.id === mentorId);
+
+                    if (!mentor) return;
+
+                    if (cb.checked) {
+                        if (selectedRegistrationsMap.size >= 3 && !selectedRegistrationsMap.has(selectionKey)) {
+                            cb.checked = false;
+                            alert("Bạn chỉ được chọn tối đa 3 lượt đăng ký mentor trên tất cả lĩnh vực.");
+                            return;
+                        }
+
+                        selectedRegistrationsMap.set(selectionKey, {
+                            mentor_id: mentor.id,
+                            field,
+                            name: mentor.name,
+                            email: mentor.email,
+                            photo: mentor.photo,
+                            expertise: mentor.expertise,
+                            mentoringForm: mentor.mentoringForm,
+                            fields: mentor.fields
+                        });
+                    } else {
+                        selectedRegistrationsMap.delete(selectionKey);
+                    }
+
+                    renderSelectedMentorsSummary();
+                });
+            });
+        }
+
+        function renderSelectedMentorsSummary() {
+            const summaryContainer = document.getElementById("selected-mentors-summary");
+            const selectedRegistrations = Array.from(selectedRegistrationsMap.values());
+
+            if (!selectedRegistrations.length) {
+                summaryContainer.innerHTML = `
+                <p class="text-sm text-gray-500 italic">Bạn chưa chọn mentor nào.</p>
+            `;
+                return;
+            }
+
+            summaryContainer.innerHTML = selectedRegistrations.map(item => `
+            <div class="flex items-start gap-4 p-4 rounded-xl bg-orange-50 border border-orange-100">
+                <div class="flex-shrink-0 w-12 h-12 rounded-full bg-orange-200 flex items-center justify-center text-orange-700 font-bold text-lg">
+                    ${escapeHtml(getInitials(item.name))}
+                </div>
+                <div class="flex-1 min-w-0">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-1 mb-1">
+                        <h4 class="text-base font-bold text-gray-900">${escapeHtml(item.name)}</h4>
+                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800">
+                            Lĩnh vực đăng ký: ${escapeHtml(item.field)}
+                        </span>
+                    </div>
+                    <p class="text-sm text-gray-600">${escapeHtml(item.expertise || item.mentoringForm || "Mentor")}</p>
+                </div>
+            </div>
+        `).join("");
+        }
+
+        async function fetchMentors() {
+            try {
+                const res = await fetch(API_BASE_MENTORS);
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+                const json = await res.json();
+                const rows = Array.isArray(json) ? json : (Array.isArray(json.data) ? json.data : []);
+                allMentors = rows.map(mapMentor).filter(m => m.id);
+
+                const interestRadios = document.querySelectorAll(".interest-radio");
+                interestRadios.forEach(radio => {
+                    radio.addEventListener("change", () => {
+                        renderMentors(radio.value);
+                    });
+                });
+
+                const checkedRadio = document.querySelector(".interest-radio:checked");
+                renderMentors(checkedRadio ? checkedRadio.value : "");
+                renderSelectedMentorsSummary();
+            } catch (err) {
+                console.error("Failed to fetch mentors:", err);
+
+                const mentorContainer = document.getElementById("mentor-selection-container");
+                const mentorList = document.getElementById("mentor-list");
+
+                mentorContainer.classList.remove("hidden");
+                mentorList.innerHTML = `
+                <div class="text-sm text-red-600 bg-red-50 border border-red-200 rounded-lg p-4">
+                    Không thể tải danh sách mentor.
+                </div>
+            `;
+            }
+        }
+
+        async function submitForm(event) {
+            event.preventDefault();
+
+            const mentee_name = document.getElementById("fullName").value.trim();
+            const mentee_email = document.getElementById("email").value.trim();
+            const mentee_branch_name = document.getElementById("unit").value.trim();
+            const commitment = document.getElementById("commitment").checked;
+
+            if (!mentee_name || !mentee_email || !mentee_branch_name) {
+                alert("Vui lòng điền đầy đủ thông tin bắt buộc.");
+                return;
+            }
+
+            if (!commitment) {
+                alert("Vui lòng xác nhận cam kết.");
+                return;
+            }
+
+            if (selectedRegistrationsMap.size === 0) {
+                alert("Vui lòng chọn ít nhất 1 mentor.");
+                return;
+            }
+
+            const registrations = Array.from(selectedRegistrationsMap.values()).map((item) => ({
+                field: item.field,
+                mentor_id: item.mentor_id
+            }));
+
+            const payload = {
+                mentee_name,
+                mentee_email,
+                mentee_branch_name,
+                registrations
+            };
+
+            try {
+                const submitButton = document.querySelector('button[type="submit"]');
+                submitButton.disabled = true;
+                submitButton.textContent = "Đang gửi...";
+
+                const res = await fetch(API_BASE_MENTEES, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                const result = await res.json();
+
+                if (!res.ok) {
+                    throw new Error(result.error || "Gửi đăng ký thất bại.");
+                }
+
+                alert("Đăng ký thành công!");
+
+                document.getElementById("menteeForm").reset();
+                selectedRegistrationsMap.clear();
+                renderSelectedMentorsSummary();
+                renderMentors("");
+            } catch (err) {
+                console.error(err);
+                alert(err.message || "Có lỗi xảy ra khi gửi form.");
+            } finally {
+                const submitButton = document.querySelector('button[type="submit"]');
+                submitButton.disabled = false;
+                submitButton.innerHTML = `
+                Nộp đơn đăng kí
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2"></path>
+                </svg>
+            `;
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            fetchMentors();
+            document.getElementById("menteeForm").addEventListener("submit", submitForm);
+        });
+    </script>
+</body>
+
+</html>

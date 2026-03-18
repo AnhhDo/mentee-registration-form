@@ -1,0 +1,13 @@
+{
+  "name": "mentormentee",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vercel dev"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.99.2",
+    "dotenv": "^17.3.1",
+    "hono": "^4.12.8"
+  }
+}
