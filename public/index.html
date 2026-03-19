@@ -252,6 +252,9 @@
                         FHRDT sẽ chuyển thông tin của bạn đến Mentor đã đăng ký và thông báo kết quả qua email FPT.
                     </label>
                 </div>
+                <div id="form-error"
+                    class="hidden mb-4 p-4 rounded-xl border border-red-200 bg-red-50 text-red-700 text-sm">
+                </div>
                 <div class="flex items-start gap-4">
                     <label class="text-sm text-gray-600 leading-relaxed" for="commitment">
                     </label>
@@ -585,23 +588,32 @@
         async function submitForm(event) {
             event.preventDefault();
 
+            const errorBox = document.getElementById("form-error");
+
+            // Reset error
+            errorBox.classList.add("hidden");
+            errorBox.textContent = "";
+
             const mentee_name = document.getElementById("fullName").value.trim();
             const mentee_email = document.getElementById("email").value.trim();
             const mentee_branch_name = document.getElementById("unit").value.trim();
             const commitment = document.getElementById("commitment").checked;
 
             if (!mentee_name || !mentee_email || !mentee_branch_name) {
-                alert("Vui lòng điền đầy đủ thông tin bắt buộc.");
+                errorBox.textContent = "Vui lòng điền đầy đủ thông tin bắt buộc.";
+                errorBox.classList.remove("hidden");
                 return;
             }
 
             if (!commitment) {
-                alert("Vui lòng xác nhận cam kết.");
+                errorBox.textContent = "Vui lòng xác nhận cam kết.";
+                errorBox.classList.remove("hidden");
                 return;
             }
 
             if (selectedRegistrationsMap.size === 0) {
-                alert("Vui lòng chọn ít nhất 1 mentor.");
+                errorBox.textContent = "Vui lòng chọn ít nhất 1 mentor.";
+                errorBox.classList.remove("hidden");
                 return;
             }
 
@@ -632,32 +644,41 @@
 
                 const result = await res.json();
 
+                // ✅ SUCCESS
                 if (res.status === 201) {
                     renderSuccessPage();
                     return;
                 }
 
+                // ❌ DUPLICATE EMAIL
                 if (res.status === 409) {
-                    throw new Error("Email này đã được đăng ký trước đó.");
+                    errorBox.textContent = "Email này đã được đăng ký trước đó. Vui lòng sử dụng email khác.";
+                    errorBox.classList.remove("hidden");
+                    document.getElementById("email").focus();
+                    return;
                 }
 
-                if (!res.ok) {
-                    throw new Error(result.error || "Gửi đăng ký thất bại.");
-                }
+                // ❌ OTHER ERRORS
+                throw new Error(result.error || "Gửi đăng ký thất bại.");
+
             } catch (err) {
                 console.error(err);
-                alert(err.message || "Có lỗi xảy ra khi gửi form.");
+
+                errorBox.textContent = err.message || "Có lỗi xảy ra khi gửi form.";
+                errorBox.classList.remove("hidden");
+
             } finally {
                 const submitButton = document.querySelector('button[type="submit"]');
                 submitButton.disabled = false;
                 submitButton.innerHTML = `
-                Nộp đơn đăng kí
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round"
-                        stroke-width="2"></path>
-                </svg>
-            `;
+            Nộp đơn đăng kí
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path d="M14 5l7 7m0 0l-7 7m7-7H3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"></path>
+            </svg>
+        `;
             }
         }
 
