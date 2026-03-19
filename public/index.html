@@ -477,27 +477,39 @@
 
             if (!selectedRegistrations.length) {
                 summaryContainer.innerHTML = `
-                <p class="text-sm text-gray-500 italic">Bạn chưa chọn mentor nào.</p>
-            `;
+            <p class="text-sm text-gray-500 italic">Bạn chưa chọn mentor nào.</p>
+        `;
                 return;
             }
 
             summaryContainer.innerHTML = selectedRegistrations.map(item => `
-            <div class="flex items-start gap-4 p-4 rounded-xl bg-orange-50 border border-orange-100">
-                <div class="flex-shrink-0 w-12 h-12 rounded-full bg-orange-200 flex items-center justify-center text-orange-700 font-bold text-lg">
-                    ${escapeHtml(getInitials(item.name))}
-                </div>
-                <div class="flex-1 min-w-0">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-1 mb-1">
-                        <h4 class="text-base font-bold text-gray-900">${escapeHtml(item.name)}</h4>
-                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800">
-                            Lĩnh vực đăng ký: ${escapeHtml(item.field)}
-                        </span>
-                    </div>
-                    <p class="text-sm text-gray-600">${escapeHtml(item.expertise || item.mentoringForm || "Mentor")}</p>
-                </div>
+        <div class="flex items-start gap-4 p-4 rounded-xl bg-gray-50 border border-gray-200">
+
+            <!-- Avatar -->
+            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-[#3e1b7a]/10 flex items-center justify-center text-[#3e1b7a] font-bold text-lg">
+                ${escapeHtml(getInitials(item.name))}
             </div>
-        `).join("");
+
+            <div class="flex-1 min-w-0">
+
+                <!-- Name + Badge -->
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-1 mb-1">
+                    <h4 class="text-base font-bold text-gray-900">
+                        ${escapeHtml(item.name)}
+                    </h4>
+
+                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#ffcc00]/20 text-[#b38f00]">
+                        Lĩnh vực đăng ký: ${escapeHtml(item.field)}
+                    </span>
+                </div>
+
+                <!-- Description -->
+                <p class="text-sm text-gray-600">
+                    ${escapeHtml(item.expertise || item.mentoringForm || "Mentor")}
+                </p>
+            </div>
+        </div>
+    `).join("");
         }
 
         async function fetchMentors() {
