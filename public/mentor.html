@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="vi">
 
+
+
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -20,9 +22,10 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: "#ec5b13",
+                        primary: "#3e1b7a",
+                        gold: "#ffcc00",
                         "background-light": "#f8f6f6",
-                        "background-dark": "#221610",
+                        "background-dark": "#0d0421",
                     },
                     fontFamily: { display: ["Public Sans", "sans-serif"] },
                     borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" },
@@ -34,10 +37,22 @@
     <style>
         body {
             font-family: "Public Sans", sans-serif;
+            background: radial-gradient(circle at top right, #3d2b85 0%, #1a0b3d 50%, #0d0421 100%);
+            background-attachment: fixed;
         }
 
         .premium-gradient {
-            background: linear-gradient(135deg, #221610 0%, #3d2a1f 100%);
+            background: linear-gradient(135deg, #1a1a4d 0%, #3e1b7a 100%);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .section-border {
+            border-left: 4px solid #ffcc00;
         }
 
         #stateBox {
@@ -50,47 +65,49 @@
     </style>
 </head>
 
-<body
-    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 transition-colors duration-300">
+<body class="font-display text-gray-800">
     <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
 
-        <header class="bg-white py-4 px-6 md:px-12 border-b border-gray-100 flex items-center">
+        <header
+            class="py-6 px-6 md:px-12 flex items-center justify-between border-b border-white/10 bg-black/20 backdrop-blur-sm top-0 z-50">
             <div class="flex items-center gap-2">
-                <span class="material-symbols-outlined text-[#ec5b13]">school</span>
-                <span class="font-bold text-xl tracking-tight">FPT Mentorship 2026</span>
+                <span class="material-symbols-outlined text-[#3e1b7a]">school</span>
+                <span class="font-bold text-xl tracking-tight text-white">FPT Mentorship 2026</span>
             </div>
         </header>
 
         <main class="max-w-7xl mx-auto w-full px-4 lg:px-20 py-8 lg:py-12">
-            <div class="relative overflow-hidden rounded-3xl premium-gradient p-8 lg:p-12 mb-12 shadow-2xl">
+            <div
+                class="relative overflow-hidden rounded-3xl premium-gradient p-8 lg:p-12 mb-12 shadow-2xl border border-white/10">
                 <div class="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
                     <span
-                        class="material-symbols-outlined text-[300px] absolute -top-20 -right-20 rotate-12">workspace_premium</span>
+                        class="material-symbols-outlined text-[300px] absolute -top-20 -right-20 rotate-12 text-white">workspace_premium</span>
                 </div>
 
                 <div class="relative z-10 flex flex-col lg:flex-row items-center lg:items-end gap-8">
                     <div class="relative group">
                         <div
-                            class="h-48 w-48 rounded-2xl overflow-hidden border-4 border-primary/30 shadow-2xl transition-transform group-hover:scale-[1.02] bg-white/5">
+                            class="h-48 w-48 rounded-2xl overflow-hidden border-4 border-[#ffcc00]/40 shadow-2xl transition-transform group-hover:scale-[1.02] bg-white/5">
                             <img id="avatar" class="w-full h-full object-cover"
                                 alt="Professional profile portrait of mentor" />
                         </div>
-                        <div class="absolute -bottom-3 -right-3 bg-primary text-white p-2 rounded-lg shadow-lg">
+                        <div
+                            class="absolute -bottom-3 -right-3 bg-[#3e1b7a] text-white p-2 rounded-lg shadow-lg border border-white/10">
                             <span class="material-symbols-outlined text-xl">verified</span>
                         </div>
                     </div>
 
                     <div class="flex-1 text-center lg:text-left space-y-2">
                         <div
-                            class="inline-flex items-center px-3 py-1 rounded-full bg-primary/20 text-primary text-xs font-bold uppercase tracking-widest mb-2">
+                            class="inline-flex items-center px-3 py-1 rounded-full bg-[#ffcc00]/20 text-[#ffcc00] text-xs font-bold uppercase tracking-widest mb-2">
                             Senior Executive Mentor
                         </div>
 
                         <h2 class="text-4xl lg:text-5xl font-bold text-white tracking-tight" id="mentorName">Mentor
                             Profile</h2>
 
-                        <p class="text-slate-300 text-lg flex items-center justify-center lg:justify-start gap-2">
-                            <span class="material-symbols-outlined text-sm">mail</span>
+                        <p class="text-white/80 text-lg flex items-center justify-center lg:justify-start gap-2">
+                            <span class="material-symbols-outlined text-sm text-[#ffcc00]">mail</span>
                             <span id="mentorEmail"></span>
                         </p>
 
@@ -102,38 +119,32 @@
             <div>
                 <div class="space-y-12 max-w-4xl mx-auto">
 
-                    <section>
-                        <div class="flex items-center gap-3 mb-6">
-                            <span class="material-symbols-outlined text-primary">description</span>
-                            <h3 class="text-2xl font-bold border-b-2 border-primary pb-1">Kinh nghiệm &amp; Thế mạnh
-                                chuyên môn</h3>
+                    <section class="glass-card rounded-2xl p-8 border border-white/10">
+                        <div class="section-border pl-4 mb-6 flex items-center gap-3">
+                            <span class="material-symbols-outlined text-[#3e1b7a]">description</span>
+                            <h3 class="text-2xl font-bold">Kinh nghiệm &amp; Thế mạnh chuyên môn</h3>
                         </div>
-                        <div class="bg-white dark:bg-slate-800/50 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm leading-relaxed text-slate-700 dark:text-slate-300 whitespace-pre-wrap"
-                            id="expertise">—</div>
+                        <div class="leading-relaxed text-slate-700 whitespace-pre-wrap" id="expertise">—</div>
                     </section>
 
-                    <section>
-                        <div class="flex items-center gap-3 mb-6">
-                            <span class="material-symbols-outlined text-primary">psychology</span>
-                            <h3 class="text-2xl font-bold border-b-2 border-primary pb-1">Kinh nghiệm Mentoring &amp;
-                                Coaching</h3>
+                    <section class="glass-card rounded-2xl p-8 border border-white/10">
+                        <div class="section-border pl-4 mb-6 flex items-center gap-3">
+                            <span class="material-symbols-outlined text-[#3e1b7a]">psychology</span>
+                            <h3 class="text-2xl font-bold">Kinh nghiệm Mentoring &amp; Coaching</h3>
                         </div>
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div
-                                class="bg-white dark:bg-slate-800/50 p-6 rounded-2xl border border-slate-200 dark:border-slate-700">
+                            <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
                                 <h4 class="font-bold text-lg mb-4 flex items-center gap-2">
-                                    <span class="material-symbols-outlined text-primary">history_edu</span>
+                                    <span class="material-symbols-outlined text-[#ffcc00]">history_edu</span>
                                     Quá trình Mentoring
                                 </h4>
-                                <p class="text-sm text-slate-600 dark:text-slate-400 whitespace-pre-wrap"
-                                    id="mentoringExp">—</p>
+                                <p class="text-sm text-slate-600 whitespace-pre-wrap" id="mentoringExp">—</p>
                             </div>
 
-                            <div
-                                class="bg-white dark:bg-slate-800/50 p-6 rounded-2xl border border-slate-200 dark:border-slate-700">
+                            <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
                                 <h4 class="font-bold text-lg mb-4 flex items-center gap-2">
-                                    <span class="material-symbols-outlined text-primary">target</span>
+                                    <span class="material-symbols-outlined text-[#ffcc00]">target</span>
                                     Lĩnh vực sẵn sàng Mentor
                                 </h4>
                                 <div class="flex flex-wrap gap-2" id="fieldsAlt"></div>
@@ -141,133 +152,130 @@
                         </div>
                     </section>
 
-                    <section>
-                        <div class="flex items-center gap-3 mb-6">
-                            <span class="material-symbols-outlined text-primary">military_tech</span>
-                            <h3 class="text-2xl font-bold border-b-2 border-primary pb-1">Thành tích &amp; Vinh danh
-                            </h3>
+                    <section class="glass-card rounded-2xl p-8 border border-white/10">
+                        <div class="section-border pl-4 mb-6 flex items-center gap-3">
+                            <span class="material-symbols-outlined text-[#3e1b7a]">military_tech</span>
+                            <h3 class="text-2xl font-bold">Thành tích &amp; Vinh danh</h3>
                         </div>
                         <div class="space-y-4" id="achievements"></div>
                     </section>
 
-                    <section id="quoteSection" class="hidden">
-                        <div class="flex items-center gap-3 mb-6">
-                            <span class="material-symbols-outlined text-primary">format_quote</span>
-                            <h3 class="text-2xl font-bold border-b-2 border-primary pb-1">Câu nói yêu thích</h3>
+                    <section id="quoteSection" class="hidden glass-card rounded-2xl p-8 border border-white/10">
+                        <div class="section-border pl-4 mb-6 flex items-center gap-3">
+                            <span class="material-symbols-outlined text-[#3e1b7a]">format_quote</span>
+                            <h3 class="text-2xl font-bold">Câu nói yêu thích</h3>
                         </div>
-                        <div
-                            class="bg-white dark:bg-slate-800/50 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
-                            <p id="favouriteQuote"
-                                class="italic text-slate-700 dark:text-slate-300 leading-relaxed whitespace-pre-wrap">
+                        <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
+                            <p id="favouriteQuote" class="italic text-slate-700 leading-relaxed whitespace-pre-wrap">
                             </p>
                         </div>
                     </section>
 
-                    <div class="bg-white dark:bg-slate-800/50 p-4 rounded-2xl border border-slate-200 dark:border-slate-700"
-                        id="stateBox">
-                        <div class="loading text-slate-700 dark:text-slate-300 text-sm" id="stateMsg">Loading...</div>
+                    <div class="glass-card p-4 rounded-2xl border border-white/10" id="stateBox">
+                        <div class="loading text-slate-700 text-sm" id="stateMsg">Loading...</div>
                     </div>
 
-                    <div class="mt-12 text-center text-sm text-gray-500">
+                    <div class="mt-12 text-center text-sm text-white">
                         Mọi thông tin cần hỗ trợ vui lòng liên hệ: Ms. ThanhNQT2 | 80456 | 090 932 3898
                     </div>
                 </div>
             </div>
         </main>
 
-        <footer class="bg-gray-100 py-10 px-4 lg:px-20 border-t border-gray-200">
+        <footer class="bg-black/40 py-20 px-6 border-t border-white/10 backdrop-blur-md">
             <div class="max-w-4xl mx-auto flex flex-col items-center text-center gap-4">
-                <div class="flex items-center gap-2 text-gray-700">
-                    <span class="material-symbols-outlined text-primary">school</span>
-                    <span class="font-bold text-lg">FPT Mentorship</span>
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-[#3e1b7a]">school</span>
+                    <span class="font-bold text-lg text-white">FPT Mentorship</span>
                 </div>
                 <div class="space-y-1">
-                    <p class="font-bold text-gray-800 uppercase tracking-wide">Trung tâm đào tạo và phát triển</p>
+                    <p class="font-bold uppercase tracking-wide text-white">Trung tâm đào tạo và phát triển</p>
                 </div>
-                <p class="text-slate-400 text-sm">
+                <p class="text-white text-sm">
                     © 2026 FPT TELECOM. ALL RIGHTS RESERVED.
                 </p>
             </div>
         </footer>
+    </div>
 
-        <script>
-            const API_BASE = "/api/mentors";
+    <script>
+        const API_BASE = "/api/mentors";
 
-            const el = (id) => document.getElementById(id);
-            const stateBox = el("stateBox");
-            const stateMsg = el("stateMsg");
+        const el = (id) => document.getElementById(id);
+        const stateBox = el("stateBox");
+        const stateMsg = el("stateMsg");
 
-            function setState(type, msg) {
-                stateBox.classList.add("show");
-                stateMsg.className = `text-sm ${type === "error" ? "text-red-600" : "text-slate-700 dark:text-slate-300"}`;
-                stateMsg.textContent = msg;
+        function setState(type, msg) {
+            stateBox.classList.add("show");
+            stateMsg.className = `text-sm ${type === "error" ? "text-red-600" : "text-slate-700 dark:text-slate-300"}`;
+            stateMsg.textContent = msg;
+        }
+
+        function clearState() {
+            stateBox.classList.remove("show");
+        }
+
+        function safeLinkEmail(email) {
+            if (!email) return "";
+            const escaped = escapeHtml(email);
+            return `<a class="hover:underline" href="mailto:${escaped}">${escaped}</a>`;
+        }
+
+        function escapeHtml(str) {
+            return String(str)
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+
+        function toChips(raw, variant) {
+            const s = (raw || "").toString().trim();
+            if (!s) return "";
+
+            const parts = s
+                .split(/[,;\n]+/g)
+                .map((x) => x.trim())
+                .filter(Boolean);
+
+            if (!parts.length) return "";
+
+            return parts
+                .slice(0, 18)
+                .map((t) => {
+                    if (variant === "card") {
+                        return `<span class="px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-lg">${escapeHtml(t)}</span>`;
+                    }
+                    return `<span class="bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-full text-white text-sm border border-white/10">${escapeHtml(t)}</span>`;
+                })
+                .join("");
+        }
+
+        function normalizeDriveImageUrl(url) {
+            if (!url) return "";
+
+            const openIdMatch = url.match(/[?&]id=([^&]+)/);
+            if (openIdMatch && openIdMatch[1]) {
+                const id = openIdMatch[1];
+                return `https://drive.google.com/thumbnail?id=${id}&sz=w1000`;
             }
 
-            function clearState() {
-                stateBox.classList.remove("show");
+            const fileMatch = url.match(/\/file\/d\/([^/]+)/);
+            if (fileMatch && fileMatch[1]) {
+                const id = fileMatch[1];
+                return `https://drive.google.com/thumbnail?id=${id}&sz=w1000`;
             }
 
-            function safeLinkEmail(email) {
-                if (!email) return "";
-                const escaped = escapeHtml(email);
-                return `<a class="hover:underline" href="mailto:${escaped}">${escaped}</a>`;
-            }
+            return url;
+        }
 
-            function escapeHtml(str) {
-                return String(str)
-                    .replace(/&/g, "&amp;")
-                    .replace(/</g, "&lt;")
-                    .replace(/>/g, "&gt;")
-                    .replace(/"/g, "&quot;")
-                    .replace(/'/g, "&#039;");
-            }
+        function renderAchievements(raw) {
+            const box = el("achievements");
+            const text = (raw || "").toString().trim();
 
-            function toChips(raw, variant) {
-                const s = (raw || "").toString().trim();
-                if (!s) return "";
-
-                const parts = s
-                    .split(/[,;\n]+/g)
-                    .map((x) => x.trim())
-                    .filter(Boolean);
-
-                if (!parts.length) return "";
-
-                return parts
-                    .slice(0, 18)
-                    .map((t) => {
-                        if (variant === "card") {
-                            return `<span class="px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-lg">${escapeHtml(t)}</span>`;
-                        }
-                        return `<span class="bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-full text-white text-sm border border-white/10">${escapeHtml(t)}</span>`;
-                    })
-                    .join("");
-            }
-
-            function normalizeDriveImageUrl(url) {
-                if (!url) return "";
-
-                const openIdMatch = url.match(/[?&]id=([^&]+)/);
-                if (openIdMatch && openIdMatch[1]) {
-                    const id = openIdMatch[1];
-                    return `https://drive.google.com/thumbnail?id=${id}&sz=w1000`;
-                }
-
-                const fileMatch = url.match(/\/file\/d\/([^/]+)/);
-                if (fileMatch && fileMatch[1]) {
-                    const id = fileMatch[1];
-                    return `https://drive.google.com/thumbnail?id=${id}&sz=w1000`;
-                }
-
-                return url;
-            }
-
-            function renderAchievements(raw) {
-                const box = el("achievements");
-                const text = (raw || "").toString().trim();
-
-                if (!text) {
-                    box.innerHTML = `
+            if (!text) {
+                box.innerHTML = `
                 <div class="flex gap-6 items-center p-6 bg-white dark:bg-slate-800/50 rounded-2xl border-l-4 border-primary shadow-sm">
                     <div class="h-16 w-16 bg-primary/10 rounded-full flex items-center justify-center shrink-0">
                         <span class="material-symbols-outlined text-3xl text-primary">workspace_premium</span>
@@ -277,15 +285,15 @@
                         <p class="text-sm text-slate-500">Không có dữ liệu</p>
                     </div>
                 </div>`;
-                    return;
-                }
+                return;
+            }
 
-                const lines = text.split(/\n+/g).map((x) => x.trim()).filter(Boolean);
+            const lines = text.split(/\n+/g).map((x) => x.trim()).filter(Boolean);
 
-                box.innerHTML = lines
-                    .map((line, idx) => {
-                        const icon = idx % 2 === 0 ? "workspace_premium" : "auto_awesome";
-                        return `
+            box.innerHTML = lines
+                .map((line, idx) => {
+                    const icon = idx % 2 === 0 ? "workspace_premium" : "auto_awesome";
+                    return `
                     <div class="flex gap-6 items-center p-6 bg-white dark:bg-slate-800/50 rounded-2xl border-l-4 border-primary shadow-sm transition-transform hover:translate-x-1">
                         <div class="h-16 w-16 bg-primary/10 rounded-full flex items-center justify-center shrink-0">
                             <span class="material-symbols-outlined text-3xl text-primary">${icon}</span>
@@ -295,88 +303,88 @@
                         </div>
                     </div>
                 `;
-                    })
-                    .join("");
+                })
+                .join("");
+        }
+
+        function mapApiResponse(apiData) {
+            return {
+                name: apiData.full_name || "Mentor Profile",
+                email: apiData.fpt_email || "",
+                profileImage: normalizeDriveImageUrl(apiData.photo || ""),
+                expertise: apiData.experience_stengths || "—",
+                mentoringExp: apiData.mentoring_experience || "Chưa có thông tin.",
+                achievements: apiData.awards || "",
+                fields: apiData.fields || "",
+                mentoringForm: apiData.mentoring_form || "",
+                favouriteQuote: apiData["favourite_quote."] || ""
+            };
+        }
+
+        function render(data) {
+            el("mentorName").textContent = data.name || "Mentor Profile";
+            el("mentorEmail").innerHTML = data.email ? safeLinkEmail(data.email) : "";
+            el("fields").innerHTML = toChips(data.fields, "hero") || "";
+
+            const fieldsAlt = el("fieldsAlt");
+            if (fieldsAlt) fieldsAlt.innerHTML = toChips(data.fields, "card") || "";
+
+            el("expertise").textContent = data.expertise || "—";
+            el("mentoringExp").textContent = data.mentoringExp || "—";
+
+            renderAchievements(data.achievements);
+
+            const avatar = el("avatar");
+            const imageUrl = normalizeDriveImageUrl(data.profileImage);
+
+            if (imageUrl) {
+                avatar.src = imageUrl;
+            } else {
+                avatar.removeAttribute("src");
             }
 
-            function mapApiResponse(apiData) {
-                return {
-                    name: apiData.full_name || "Mentor Profile",
-                    email: apiData.fpt_email || "",
-                    profileImage: normalizeDriveImageUrl(apiData.photo || ""),
-                    expertise: apiData.experience_stengths || "—",
-                    mentoringExp: apiData.mentoring_experience || "Chưa có thông tin.",
-                    achievements: apiData.awards || "",
-                    fields: apiData.fields || "",
-                    mentoringForm: apiData.mentoring_form || "",
-                    favouriteQuote: apiData["favourite_quote."] || ""
-                };
+            const quoteSection = el("quoteSection");
+            const favouriteQuote = el("favouriteQuote");
+            if (data.favouriteQuote) {
+                quoteSection.classList.remove("hidden");
+                favouriteQuote.textContent = data.favouriteQuote;
+            } else {
+                quoteSection.classList.add("hidden");
+            }
+        }
+
+        async function boot() {
+            const params = new URLSearchParams(window.location.search);
+            const mentorId = params.get("id");
+
+            if (!mentorId) {
+                setState("error", "Missing mentor id in URL");
+                return;
             }
 
-            function render(data) {
-                el("mentorName").textContent = data.name || "Mentor Profile";
-                el("mentorEmail").innerHTML = data.email ? safeLinkEmail(data.email) : "";
-                el("fields").innerHTML = toChips(data.fields, "hero") || "";
+            const url = `${API_BASE}/${encodeURIComponent(mentorId)}`;
+            setState("loading", "Loading mentor info...");
 
-                const fieldsAlt = el("fieldsAlt");
-                if (fieldsAlt) fieldsAlt.innerHTML = toChips(data.fields, "card") || "";
+            try {
+                const res = await fetch(url);
 
-                el("expertise").textContent = data.expertise || "—";
-                el("mentoringExp").textContent = data.mentoringExp || "—";
-
-                renderAchievements(data.achievements);
-
-                const avatar = el("avatar");
-                const imageUrl = normalizeDriveImageUrl(data.profileImage);
-
-                if (imageUrl) {
-                    avatar.src = imageUrl;
-                } else {
-                    avatar.removeAttribute("src");
+                if (!res.ok) {
+                    throw new Error(`HTTP ${res.status}`);
                 }
 
-                const quoteSection = el("quoteSection");
-                const favouriteQuote = el("favouriteQuote");
-                if (data.favouriteQuote) {
-                    quoteSection.classList.remove("hidden");
-                    favouriteQuote.textContent = data.favouriteQuote;
-                } else {
-                    quoteSection.classList.add("hidden");
-                }
+                const apiData = await res.json();
+                const mappedData = mapApiResponse(apiData);
+
+                render(mappedData);
+                clearState();
+            } catch (err) {
+                console.error(err);
+                setState("error", err.message || "Failed to load mentor data.");
             }
+        }
 
-            async function boot() {
-                const params = new URLSearchParams(window.location.search);
-                const mentorId = params.get("id");
-
-                if (!mentorId) {
-                    setState("error", "Missing mentor id in URL");
-                    return;
-                }
-
-                const url = `${API_BASE}/${encodeURIComponent(mentorId)}`;
-                setState("loading", "Loading mentor info...");
-
-                try {
-                    const res = await fetch(url);
-
-                    if (!res.ok) {
-                        throw new Error(`HTTP ${res.status}`);
-                    }
-
-                    const apiData = await res.json();
-                    const mappedData = mapApiResponse(apiData);
-
-                    render(mappedData);
-                    clearState();
-                } catch (err) {
-                    console.error(err);
-                    setState("error", err.message || "Failed to load mentor data.");
-                }
-            }
-
-            boot();
-        </script>
+        boot();
+    </script>
 </body>
 
 </html>

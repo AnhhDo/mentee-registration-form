@@ -18,19 +18,22 @@
     <style>
         body {
             font-family: "Public Sans", sans-serif;
+            background: radial-gradient(circle at top right, #3d2b85 0%, #1a0b3d 50%, #0d0421 100%);
+            background-attachment: fixed;
         }
 
         .hero-gradient {
-            background: linear-gradient(135deg, #e65100 0%, #ff8f00 100%);
+            background: linear-gradient(135deg, #1a1a4d 0%, #3e1b7a 100%);
         }
 
         .fpt-orange-button {
-            background-color: #f37021;
-            transition: background-color 0.2s ease;
+            background-color: #3e1b7a;
+            transition: all 0.2s ease;
         }
 
-        .fpt-orange-button:hover {
-            background-color: #d65d15;
+        .fpt-premium-button:hover {
+            background-color: #2d1359;
+            box-shadow: 0 4px 12px rgba(62, 27, 122, 0.3);
         }
 
         .form-card {
@@ -38,24 +41,58 @@
         }
 
         .section-border {
-            border-left: 4px solid #f37021;
+            border-left: 4px solid #ffcc00;
+        }
+
+        .accent-gold {
+            color: #ffcc00;
+        }
+
+        .bg-premium-navy {
+            background-color: #1a1a4d;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .star {
+            position: fixed;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.5;
+            pointer-events: none;
         }
     </style>
 </head>
 
 <body class="bg-gray-50 text-gray-800">
-    <header class="bg-white py-4 px-6 md:px-12 border-b border-gray-100 flex items-center">
+    <header
+        class="py-6 px-6 md:px-12 flex items-center justify-between border-b border-white/10 bg-black/20 backdrop-blur-sm top-0 z-50">
         <div class="flex items-center gap-2">
-            <span class="material-symbols-outlined text-[#ec5b13]">school</span>
-            <span class="font-bold text-xl tracking-tight">FPT Mentorship 2026</span>
+            <span class="material-symbols-outlined text-[#3e1b7a]">school</span>
+            <span class="font-bold text-xl tracking-tight text-white">FPT Mentorship 2026</span>
         </div>
     </header>
 
     <main class="max-w-4xl mx-auto px-4 pb-20">
-        <section class="mt-8 mb-12">
-            <div class="hero-gradient rounded-2xl p-8 md:p-12 text-white shadow-lg">
-                <h1 class="text-3xl md:text-4xl font-bold mb-4">[FHRDT] ĐĂNG KÝ MENTEE - CHƯƠNG TRÌNH MENTORSHIP 2026
-                </h1>
+        <section class="mt-8 mb-12 relative overflow-hidden rounded-2xl shadow-2xl border border-white/10">
+            <div
+                class="relative z-10 p-8 md:p-16 flex flex-col items-center text-center bg-gradient-to-t from-black/60 to-transparent">
+                <div class="mb-6">
+                    <h2 class="text-white/80 uppercase tracking-[0.3em] font-bold mb-2 block">
+                        [FHRDT] ĐĂNG KÝ MENTEE NHÓM CỐ ĐỊNH
+                    </h2>
+                    <h2 class="text-white/80 uppercase tracking-[0.3em] font-bold mb-2 block">
+                        CHƯƠNG TRÌNH MENTORSHIP 2026
+                    </h2>
+                </div>
+                <p class="text-base text-white/90 max-w-2xl leading-relaxed">
+                    Chương trình Mentorship 2026 chính thức khởi động, kết nối Mentor &amp; Mentee cùng chia sẻ kinh
+                    nghiệm và phát triển năng lực.
+                </p>
             </div>
         </section>
 
@@ -71,7 +108,7 @@
                             1. Họ và tên <span class="text-red-500">*</span>
                         </label>
                         <input
-                            class="w-full rounded-lg border-gray-300 focus:border-orange-500 focus:ring-orange-500 py-3"
+                            class="w-full rounded-lg border-gray-300 focus:border-[#3e1b7a] focus:ring-[#3e1b7a] py-3"
                             id="fullName" name="fullName" placeholder="Nguyễn Văn A" required type="text" />
                     </div>
 
@@ -80,10 +117,13 @@
                             2. Email FPT/TINPNC của Anh Chị? <span class="text-red-500">*</span>
                         </label>
                         <p class="text-xs text-gray-500 italic mb-2">
-                            Lưu ý: Anh Chị vui lòng điền đúng email để hệ thống ghi nhận kết quả lựa chọn
+                            Lưu ý: Anh Chị vui lòng điền đầy đủ và đúng Email FPT để hệ thống ghi nhận kết quả lựa chọn.
+                        </p>
+                        <p class="text-xs text-gray-500 italic mb-2">
+                            Ví dụ: ThanhNQT2@fpt.com hoặc Phuongnam.Thanhnqt2@fpt.net hoặc Thanhnqt2@vienthongtin.com
                         </p>
                         <input
-                            class="w-full rounded-lg border-gray-300 focus:border-orange-500 focus:ring-orange-500 py-3"
+                            class="w-full rounded-lg border-gray-300 focus:border-[#3e1b7a] focus:ring-[#3e1b7a] py-3"
                             id="email" name="email" placeholder="Your answer" required type="email" />
                     </div>
 
@@ -93,7 +133,7 @@
                         </label>
                         <p class="text-xs text-gray-500 italic mb-2">VD: FHR, DNI, ISC...</p>
                         <input
-                            class="w-full rounded-lg border-gray-300 focus:border-orange-500 focus:ring-orange-500 py-3"
+                            class="w-full rounded-lg border-gray-300 focus:border-[#3e1b7a] focus:ring-[#3e1b7a] py-3"
                             id="unit" name="unit" placeholder="Your answer" required type="text" />
                     </div>
 
@@ -106,21 +146,21 @@
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
                             <label class="flex items-center gap-3 cursor-pointer group">
                                 <input
-                                    class="interest-radio w-5 h-5 rounded-full border-gray-300 text-orange-600 focus:ring-orange-500"
+                                    class="interest-radio w-5 h-5 rounded-full border-gray-300 text-[#3e1b7a] focus:ring-[#3e1b7a] focus:ring-2"
                                     name="mentoring_field" type="radio" value="Quản lý & Lãnh đạo" />
                                 <span class="text-sm text-gray-700 group-hover:text-black">Quản lý &amp; Lãnh đạo</span>
                             </label>
 
                             <label class="flex items-center gap-3 cursor-pointer group">
                                 <input
-                                    class="interest-radio w-5 h-5 rounded-full border-gray-300 text-orange-600 focus:ring-orange-500"
+                                    class="interest-radio w-5 h-5 rounded-full border-gray-300 text-[#3e1b7a] focus:ring-[#3e1b7a] focus:ring-2"
                                     name="mentoring_field" type="radio" value="Kinh doanh" />
                                 <span class="text-sm text-gray-700 group-hover:text-black">Kinh doanh</span>
                             </label>
 
                             <label class="flex items-center gap-3 cursor-pointer group">
                                 <input
-                                    class="interest-radio w-5 h-5 rounded-full border-gray-300 text-orange-600 focus:ring-orange-500"
+                                    class="interest-radio w-5 h-5 rounded-full border-gray-300 text-[#3e1b7a] focus:ring-[#3e1b7a] focus:ring-2"
                                     name="mentoring_field" type="radio" value="Kỹ thuật & Công nghệ" />
                                 <span class="text-sm text-gray-700 group-hover:text-black">Kỹ thuật &amp; Công
                                     nghệ</span>
@@ -128,21 +168,21 @@
 
                             <label class="flex items-center gap-3 cursor-pointer group">
                                 <input
-                                    class="interest-radio w-5 h-5 rounded-full border-gray-300 text-orange-600 focus:ring-orange-500"
+                                    class="interest-radio w-5 h-5 rounded-full border-gray-300 text-[#3e1b7a] focus:ring-[#3e1b7a] focus:ring-2"
                                     name="mentoring_field" type="radio" value="Vận hành" />
                                 <span class="text-sm text-gray-700 group-hover:text-black">Vận hành</span>
                             </label>
 
                             <label class="flex items-center gap-3 cursor-pointer group">
                                 <input
-                                    class="interest-radio w-5 h-5 rounded-full border-gray-300 text-orange-600 focus:ring-orange-500"
+                                    class="interest-radio w-5 h-5 rounded-full border-gray-300 text-[#3e1b7a] focus:ring-[#3e1b7a] focus:ring-2"
                                     name="mentoring_field" type="radio" value="Dịch vụ khách hàng" />
                                 <span class="text-sm text-gray-700 group-hover:text-black">Dịch vụ khách hàng</span>
                             </label>
 
                             <label class="flex items-center gap-3 cursor-pointer group">
                                 <input
-                                    class="interest-radio w-5 h-5 rounded-full border-gray-300 text-orange-600 focus:ring-orange-500"
+                                    class="interest-radio w-5 h-5 rounded-full border-gray-300 text-[#3e1b7a] focus:ring-[#3e1b7a] focus:ring-2"
                                     name="mentoring_field" type="radio"
                                     value="Kỹ năng phát triển & định hướng cá nhân" />
                                 <span class="text-sm text-gray-700 group-hover:text-black">Kỹ năng phát triển &amp; định
@@ -151,14 +191,14 @@
 
                             <label class="flex items-center gap-3 cursor-pointer group">
                                 <input
-                                    class="interest-radio w-5 h-5 rounded-full border-gray-300 text-orange-600 focus:ring-orange-500"
+                                    class="interest-radio w-5 h-5 rounded-full border-gray-300 text-[#3e1b7a] focus:ring-[#3e1b7a] focus:ring-2"
                                     name="mentoring_field" type="radio" value="Nhân sự" />
                                 <span class="text-sm text-gray-700 group-hover:text-black">Nhân sự</span>
                             </label>
 
                             <label class="flex items-center gap-3 cursor-pointer group">
                                 <input
-                                    class="interest-radio w-5 h-5 rounded-full border-gray-300 text-orange-600 focus:ring-orange-500"
+                                    class="interest-radio w-5 h-5 rounded-full border-gray-300 text-[#3e1b7a] focus:ring-[#3e1b7a] focus:ring-2"
                                     name="mentoring_field" type="radio" value="Tài chính" />
                                 <span class="text-sm text-gray-700 group-hover:text-black">Tài chính</span>
                             </label>
@@ -169,7 +209,7 @@
                                 <div class="mb-4">
                                     <h3
                                         class="text-sm font-bold text-gray-900 uppercase tracking-wider flex items-center gap-2">
-                                        <svg class="w-4 h-4 text-orange-600" fill="none" stroke="currentColor"
+                                        <svg class="w-4 h-4 text-[#ffcc00]" fill="none" stroke="currentColor"
                                             viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                             <path
                                                 d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
@@ -205,16 +245,15 @@
 
             <div class="bg-white rounded-xl p-8 form-card border border-gray-100">
                 <div class="flex items-start gap-4">
-                    <input class="mt-1 w-5 h-5 rounded border-gray-300 text-orange-600 focus:ring-orange-500"
+                    <input class="mt-1 w-5 h-5 rounded border-gray-300 text-[#3e1b7a] focus:ring-[#3e1b7a] focus:ring-2"
                         id="commitment" name="commitment" required type="checkbox" />
                     <label class="text-sm text-gray-600 leading-relaxed" for="commitment">
-                        Tôi xác nhận rằng các thông tin đã cung cấp trong form là đúng sự thật. <br>
+                        Tôi xác nhận các thông tin đăng ký là hoàn toàn chính xác. <br>
                         FHRDT sẽ chuyển thông tin của bạn đến Mentor đã đăng ký và thông báo kết quả qua email FPT.
                     </label>
                 </div>
                 <div class="flex items-start gap-4">
                     <label class="text-sm text-gray-600 leading-relaxed" for="commitment">
-
                     </label>
                 </div>
 
@@ -222,7 +261,7 @@
                     <button
                         class="fpt-orange-button text-white px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-2 w-full md:w-auto"
                         type="submit">
-                        Nộp đơn đăng kí
+                        Nộp đơn đăng ký
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg">
                             <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round"
@@ -233,25 +272,28 @@
             </div>
         </form>
 
-        <div class="mt-12 text-center text-sm text-gray-500">
+        <div class="mt-12 text-center text-sm text-white">
             Mọi thông tin cần hỗ trợ vui lòng liên hệ: Ms. ThanhNQT2 | 80456 | 090 932 3898
         </div>
     </main>
 
-    <footer class="bg-gray-100 py-10 px-4 lg:px-20 border-t border-gray-200">
+    <footer class="bg-black/40 py-20 px-6 border-t border-white/10 backdrop-blur-md">
         <div class="max-w-4xl mx-auto flex flex-col items-center text-center gap-4">
             <div class="flex items-center gap-2 text-gray-700">
-                <span class="material-symbols-outlined text-[#ec5b13]">school</span>
-                <span class="font-bold text-lg">FPT Mentorship</span>
+                <span class="material-symbols-outlined text-[#3e1b7a]">school</span>
+                <span class="font-bold text-lg text-white">FPT Mentorship</span>
             </div>
             <div class="space-y-1">
-                <p class="font-bold text-gray-800 uppercase tracking-wide">Trung tâm đào tạo và phát triển</p>
+                <p class="font-bold text-gray-800 uppercase tracking-wide text-white">
+                    BAN NHÂN SỰ - TRUNG TÂM ĐÀO TẠO VÀ PHÁT TRIỂN
+                </p>
             </div>
-            <p class="text-slate-400 text-sm">
+            <p class="text-slate-400 text-sm text-white">
                 © 2026 FPT TELECOM. ALL RIGHTS RESERVED.
             </p>
         </div>
     </footer>
+
 
     <script>
         const API_BASE_MENTORS = "/api/mentors";
@@ -574,6 +616,66 @@
             document.getElementById("menteeForm").addEventListener("submit", submitForm);
         });
     </script>
+    <div class="star" style="width: 2.82478px; height: 2.82478px; left: 56.2383vw; top: 65.3467vh; opacity: 0.527752;">
+    </div>
+    <div class="star"
+        style="width: 0.256131px; height: 0.256131px; left: 3.02185vw; top: 67.1027vh; opacity: 0.920195;"></div>
+    <div class="star" style="width: 2.04601px; height: 2.04601px; left: 60.2198vw; top: 27.1637vh; opacity: 0.305994;">
+    </div>
+    <div class="star" style="width: 2.07541px; height: 2.07541px; left: 25.8638vw; top: 1.60779vh; opacity: 0.533294;">
+    </div>
+    <div class="star"
+        style="width: 0.248614px; height: 0.248614px; left: 2.65353vw; top: 39.8869vh; opacity: 0.157203;"></div>
+    <div class="star" style="width: 2.34814px; height: 2.34814px; left: 50.4852vw; top: 69.1981vh; opacity: 0.261431;">
+    </div>
+    <div class="star" style="width: 2.15942px; height: 2.15942px; left: 66.5414vw; top: 8.97998vh; opacity: 0.533009;">
+    </div>
+    <div class="star" style="width: 0.943349px; height: 0.943349px; left: 92.5727vw; top: 26.7625vh; opacity: 0.86219;">
+    </div>
+    <div class="star" style="width: 2.2342px; height: 2.2342px; left: 12.4761vw; top: 92.4203vh; opacity: 0.518858;">
+    </div>
+    <div class="star"
+        style="width: 0.921056px; height: 0.921056px; left: 35.0213vw; top: 78.7951vh; opacity: 0.286708;"></div>
+    <div class="star" style="width: 2.22647px; height: 2.22647px; left: 30.6637vw; top: 50.3299vh; opacity: 0.320282;">
+    </div>
+    <div class="star"
+        style="width: 0.578488px; height: 0.578488px; left: 57.8146vw; top: 81.721vh; opacity: 0.0785895;"></div>
+    <div class="star" style="width: 1.27584px; height: 1.27584px; left: 65.0937vw; top: 20.6556vh; opacity: 0.120014;">
+    </div>
+    <div class="star" style="width: 2.70173px; height: 2.70173px; left: 98.3064vw; top: 21.3354vh; opacity: 0.560837;">
+    </div>
+    <div class="star" style="width: 1.88035px; height: 1.88035px; left: 97.5994vw; top: 37.7177vh; opacity: 0.704182;">
+    </div>
+    <div class="star" style="width: 2.06518px; height: 2.06518px; left: 27.2819vw; top: 5.74613vh; opacity: 0.496226;">
+    </div>
+    <div class="star"
+        style="width: 0.120829px; height: 0.120829px; left: 37.6097vw; top: 72.9596vh; opacity: 0.665301;"></div>
+    <div class="star" style="width: 1.90078px; height: 1.90078px; left: 42.0352vw; top: 65.8234vh; opacity: 0.429838;">
+    </div>
+    <div class="star" style="width: 1.85393px; height: 1.85393px; left: 38.715vw; top: 5.88367vh; opacity: 0.111251;">
+    </div>
+    <div class="star" style="width: 0.265929px; height: 0.265929px; left: 80.4197vw; top: 9.7093vh; opacity: 0.802783;">
+    </div>
+    <div class="star"
+        style="width: 0.197796px; height: 0.197796px; left: 15.1817vw; top: 34.0941vh; opacity: 0.744221;"></div>
+    <div class="star" style="width: 2.84811px; height: 2.84811px; left: 30.9411vw; top: 9.82157vh; opacity: 0.484063;">
+    </div>
+    <div class="star" style="width: 2.71933px; height: 2.71933px; left: 89.5286vw; top: 40.5512vh; opacity: 0.0490957;">
+    </div>
+    <div class="star"
+        style="width: 0.0785188px; height: 0.0785188px; left: 60.8308vw; top: 50.6687vh; opacity: 0.524092;"></div>
+    <div class="star" style="width: 1.66291px; height: 1.66291px; left: 72.0152vw; top: 28.2962vh; opacity: 0.464406;">
+    </div>
+    <div class="star" style="width: 2.1932px; height: 2.1932px; left: 27.517vw; top: 98.2443vh; opacity: 0.285118;">
+    </div>
+    <div class="star"
+        style="width: 0.579031px; height: 0.579031px; left: 97.2253vw; top: 63.6043vh; opacity: 0.959349;"></div>
+    <div class="star" style="width: 2.31878px; height: 2.31878px; left: 52.3084vw; top: 62.3434vh; opacity: 0.774811;">
+    </div>
+    <div class="star" style="width: 1.00944px; height: 1.00944px; left: 34.4054vw; top: 82.7039vh; opacity: 0.623335;">
+    </div>
+    <div class="star" style="width: 1.59298px; height: 1.59298px; left: 56.0409vw; top: 68.2326vh; opacity: 0.116296;">
+    </div>
 </body>
 
 </html>
