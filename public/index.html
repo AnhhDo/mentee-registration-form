@@ -512,6 +512,42 @@
     `).join("");
         }
 
+        function renderSuccessPage() {
+            const main = document.querySelector("main");
+
+            main.innerHTML = `
+        <div class="max-w-2xl mx-auto mt-16">
+            <div class="bg-white rounded-2xl p-10 border border-gray-100 shadow-xl text-center">
+
+                <!-- Icon -->
+                <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-[#3e1b7a]/10 flex items-center justify-center">
+                    <svg class="w-8 h-8 text-[#3e1b7a]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M5 13l4 4L19 7" />
+                    </svg>
+                </div>
+
+                <!-- Title -->
+                <h2 class="text-2xl font-bold text-gray-900 mb-2">
+                    Đăng ký thành công!
+                </h2>
+
+                <!-- Message -->
+                <p class="text-gray-600 mb-6">
+                    Cảm ơn bạn đã đăng ký chương trình Mentorship 2026.
+                    Kết quả sẽ được gửi qua email FPT của bạn.
+                </p>
+
+                <!-- Action -->
+                <button onclick="window.location.reload()"
+                    class="bg-[#3e1b7a] hover:bg-[#2d1359] text-white px-6 py-3 rounded-xl font-semibold transition">
+                    Gửi thêm đăng ký khác
+                </button>
+            </div>
+        </div>
+    `;
+        }
+
         async function fetchMentors() {
             try {
                 const res = await fetch(API_BASE_MENTORS);
@@ -596,16 +632,18 @@
 
                 const result = await res.json();
 
+                if (res.status === 201) {
+                    renderSuccessPage();
+                    return;
+                }
+
+                if (res.status === 409) {
+                    throw new Error("Email này đã được đăng ký trước đó.");
+                }
+
                 if (!res.ok) {
                     throw new Error(result.error || "Gửi đăng ký thất bại.");
                 }
-
-                alert("Đăng ký thành công!");
-
-                document.getElementById("menteeForm").reset();
-                selectedRegistrationsMap.clear();
-                renderSelectedMentorsSummary();
-                renderMentors("");
             } catch (err) {
                 console.error(err);
                 alert(err.message || "Có lỗi xảy ra khi gửi form.");
