@@ -70,7 +70,7 @@ app.post("/api/mentees", async (c) => {
 
   const { data: existingMentee, error: checkError } = await supabase
     .from("mentee_info")
-    .select("id, mentee_email")
+    .select("mentee_email")
     .eq("mentee_email", normalizedEmail)
     .limit(1)
     .maybeSingle();
