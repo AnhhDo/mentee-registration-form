@@ -64,10 +64,32 @@ app.post("/api/mentees", async (c) => {
     return c.json({ error: "registrations is required" }, 400);
   }
 
+  const normalizedEmail = String(mentee_email).trim().toLowerCase();
+  const normalizedName = String(mentee_name).trim();
+  const normalizedBranch = mentee_branch_name ? String(mentee_branch_name).trim() : null;
+
+  const { data: existingMentee, error: checkError } = await supabase
+    .from("mentee_info")
+    .select("id, mentee_email")
+    .eq("mentee_email", normalizedEmail)
+    .limit(1)
+    .maybeSingle();
+
+  if (checkError) {
+    return c.json({ error: checkError.message }, 500);
+  }
+
+  if (existingMentee) {
+    return c.json(
+      { error: "Email already exists. Submission is not allowed." },
+      409
+    );
+  }
+
   const rows = registrations.map((item) => ({
-    mentee_name,
-    mentee_email,
-    mentee_branch_name,
+    mentee_name: normalizedName,
+    mentee_email: normalizedEmail,
+    mentee_branch_name: normalizedBranch,
     field: item.field,
     mentor_id: item.mentor_id,
   }));
@@ -77,7 +99,9 @@ app.post("/api/mentees", async (c) => {
     .insert(rows)
     .select();
 
-  if (error) return c.json({ error: error.message }, 500);
+  if (error) {
+    return c.json({ error: error.message }, 500);
+  }
 
   return c.json(data, 201);
 });
