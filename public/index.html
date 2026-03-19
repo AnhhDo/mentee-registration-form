@@ -125,6 +125,9 @@
                         <input
                             class="w-full rounded-lg border-gray-300 focus:border-[#3e1b7a] focus:ring-[#3e1b7a] py-3"
                             id="email" name="email" placeholder="Your answer" required type="email" />
+                        <div id="form-error"
+                            class="hidden mb-4 p-4 rounded-xl border border-red-200 bg-red-50 text-red-700 text-sm">
+                        </div>
                     </div>
 
                     <div class="col-span-1 md:col-span-2">
@@ -252,9 +255,7 @@
                         FHRDT sẽ chuyển thông tin của bạn đến Mentor đã đăng ký và thông báo kết quả qua email FPT.
                     </label>
                 </div>
-                <div id="form-error"
-                    class="hidden mb-4 p-4 rounded-xl border border-red-200 bg-red-50 text-red-700 text-sm">
-                </div>
+
                 <div class="flex items-start gap-4">
                     <label class="text-sm text-gray-600 leading-relaxed" for="commitment">
                     </label>
