@@ -653,7 +653,7 @@
 
                 // ❌ DUPLICATE EMAIL
                 if (res.status === 409) {
-                    errorBox.textContent = "Email này đã được đăng ký trước đó. Vui lòng sử dụng email khác.";
+                    errorBox.textContent = "Email này đã được sử dụng để đăng ký trước đó. Vui lòng sử dụng email khác.";
                     errorBox.classList.remove("hidden");
                     document.getElementById("email").focus();
                     return;
